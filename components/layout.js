@@ -24,7 +24,7 @@ export default function Layout({ children, home }){
                </>
             ) : (
                <>
-                  <Link href="/" >
+                  <Link href="/" passHref>
                      <div>
                         <Image priority src="/images/profile.jpeg" className={utilStyles.borderCircle} height={108} width={108} alt="profile image" />
                      </div>
