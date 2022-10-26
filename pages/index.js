@@ -4,6 +4,7 @@ import Date from '../components/date'
 import Layout, { siteTitle } from "../components/layout"
 import { getSortedPostsData } from "../lib/posts"
 import utilStyles from '../styles/utils.module.css'
+import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react"
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData()
@@ -15,11 +16,45 @@ export async function getStaticProps(){
 }
 
 export default function Home({ allPostsData }){
+  const socials = [
+    {
+      name: "Facebook",
+      link: "https://www.facebook.com/imsayedsaddam",
+      icon: <Facebook />
+    },
+    {
+      name: "Twitter",
+      link: "https://www.twitter.com/hsaddam355",
+      icon: <Twitter />
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/iamsayedsaddam",
+      icon: <Instagram />
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/sayed-saddam-hussain",
+      icon: <Linkedin />
+    },
+    {
+      name: "GitHub",
+      link: "https://www.github.com/sayedsaddam",
+      icon: <Github />
+    },
+  ]
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <div className={utilStyles.socials}>
+        {socials.map((item) => (
+          <Link key={item.name} href={item.link} passHref>
+            <a className={utilStyles.socialLink} target="_blank">{item.icon}</a>
+          </Link>
+        ))}
+      </div>
       <section className={utilStyles.headingMd}>
         <p>Hi, I am Saddam (Sayed Saddam Hussain), born in Swat in May 1993. Studied Bachelors in Computer Science at the University of Agriculture, Peshawar - Pakistan. Graduated in 2015, started internship at IT Excellence Center, Khyber Pakhtunkhwa in June, 2016 till December 2016.</p>
         

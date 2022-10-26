@@ -50,3 +50,16 @@
  .lightText {
    color: #666;
  }
+
+ .socials{
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+ }
+ .socialLink{
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+  padding: 14px 8px 4px 8px;
+  border-radius: 50px;
+ }
